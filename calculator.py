@@ -40,7 +40,7 @@ operator = operator_check()
 number_2 = number_check()
 while number_2 == 0 and (operator == '/' or operator == '//' or operator == '%'):
     print('Division by zero!')
-    number1 = number_check()
+    number_1 = number_check()
     operator = operator_check()
     number_2 = number_check()
 if operator == '+':
