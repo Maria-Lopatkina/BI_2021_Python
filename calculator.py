@@ -20,7 +20,7 @@ def number_check():
 
 
 def operator_check():
-    '''Function checks the correctness of the entered operator and returns it'''
+    '''Function checks the correctness of the entered operator'''
     var = input("Enter an operator: ")
     if var == 'stop':
         sys.exit()
@@ -28,15 +28,15 @@ def operator_check():
     while count != 1:
         if var in ('+', '-', '*', '/', '//', '%', '**'):
             return var
-        print("The \"", var, "\" is not an operator. The operation cannot be performed")
+        print("The \"", var, "\" is not an operator.")
         var = input("Enter an operator: ")
         if var == "stop":
             sys.exit()
 
 
-print("Hello, stranger! It is a simple calculator. Note, that the possible operators are:\n"
-      "addition (+)\nsubtraction (-)\nmultiplication (*)\ndivision (/)\nfloor division (//)\n"
-      "modular division (%)\nexponentiation (**)\n"
+print("Hello, stranger! It is a simple calculator for:\n"
+      "addition (+)\nsubtraction (-)\nmultiplication (*)\ndivision (/)\n"
+      "floor division (//)\nmodular division (%)\nexponentiation (**)\n"
       "For finishing the script print 'stop' (without quotes).\n")
 number_1 = number_check()
 operator = operator_check()
