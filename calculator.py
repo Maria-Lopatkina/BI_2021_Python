@@ -1,4 +1,4 @@
-'''Using sys.exit() for realization of calculator finishing'''
+'''Using sys.exit() for calculator finishing'''
 import sys
 
 
@@ -41,7 +41,7 @@ print("Hello, stranger! It is a simple calculator. Note, that the possible opera
 number_1 = number_check()
 operator = operator_check()
 number_2 = number_check()
-while number_2 == 0 and (operator == '/' or operator == '//' or operator == '%'):
+while number_2 == 0 and operator in ('/', '//', '%'):
     print('Division by zero!')
     number_1 = number_check()
     operator = operator_check()
