@@ -1,40 +1,43 @@
+'''Using sys.exit() for realization of calculator finishing'''
 import sys
 
 
 def number_check():
-    x = input("Enter a number: ")
-    if x == 'stop':
+    '''In a case of the type of var is 'float', function returns float(var)'''
+    var = input("Enter a number: ")
+    if var == 'stop':
         sys.exit()
-    z = 0
-    while z != 1:
+    count = 0
+    while count != 1:
         try:
-            float(x)
-            return float(x)
+            float(var)
+            return float(var)
         except ValueError:
-            print("The \"", x, "\" is not a number")
-            x = input("Enter a number: ")
-            if x == 'stop':
+            print("The \"", var, "\" is not a number")
+            var = input("Enter a number: ")
+            if var == 'stop':
                 sys.exit()
 
 
 def operator_check():
-    x = input("Enter an operator: ")
-    if x == 'stop':
+    '''Function checks the correctness of the entered operator and returns it'''
+    var = input("Enter an operator: ")
+    if var == 'stop':
         sys.exit()
-    z = 0
-    while z != 1:
-        if x == "+" or x == "-" or x == "*" or x == "/" or x == "//" or x == "%" or x == "**":
-            return x
-        else:
-            print("The \"", x, "\" is not an operator. The operation cannot be performed")
-            x = input("Enter an operator: ")
-            if x == "stop":
-                sys.exit()
+    count = 0
+    while count != 1:
+        if var in ('+', '-', '*', '/', '//', '%', '**'):
+            return var
+        print("The \"", var, "\" is not an operator. The operation cannot be performed")
+        var = input("Enter an operator: ")
+        if var == "stop":
+            sys.exit()
 
 
 print("Hello, stranger! It is a simple calculator. Note, that the possible operators are:\n"
-      "addition (+), subtraction (-), multiplication (*), division (/), floor division (//), modular division (%), "
-      "and exponentiation (**)\nFor finishing the script print 'stop' (without quotes).")
+      "addition (+)\nsubtraction (-)\nmultiplication (*)\ndivision (/)\nfloor division (//)\n"
+      "modular division (%)\nexponentiation (**)\n"
+      "For finishing the script print 'stop' (without quotes).\n")
 number_1 = number_check()
 operator = operator_check()
 number_2 = number_check()
