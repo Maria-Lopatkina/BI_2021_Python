@@ -24,7 +24,7 @@ def currency_check():
         if local_var in currency:
             return local_var
         print("It's not an available currency. ", end="")
-        local_var = input("Please, choose a currency among listed above: ").upper()
+        local_var = input("Choose a currency among listed above: ").upper()
         if local_var == "STOP":
             sys.exit()
 
@@ -71,7 +71,7 @@ while VAR != 1:
         print(amount, currency.get(currency_1)[3], "equals:")
     for key in currency:
         if key != currency_1:
-            final_amount = round(amount * currency.get(currency_1)[0] 
+            final_amount = round(amount * currency.get(currency_1)[0]
                                  * currency.get(key)[1], 2)
             if final_amount == 1:
                 print("\t", final_amount, currency.get(key)[2])
