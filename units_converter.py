@@ -80,3 +80,4 @@ while VAR != 1:
           "Norwegian krone (NOK), Swedish krona (SEK), Danish krone (DKK),\n"
           "Iceland krona (ISK), and Euro (EUR).\n"
           "Or enter 'stop' to finish the converter.\n")
+    
