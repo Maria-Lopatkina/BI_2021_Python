@@ -16,7 +16,7 @@ currency = {
 
 def currency_check():
     '''Function for correct currency checkout'''
-    local_var = input("Enter a currency for conversion: ").upper()
+    local_var = input("Enter a currency: ").upper()
     if local_var == 'STOP':
         sys.exit()
     count = 0
@@ -45,14 +45,15 @@ def amount_check():
                 sys.exit()
 
 
-print("Here is a scandinavian currency converter, that is available for the following currencies:\n"
+print("Here is a scandinavian currency converter, that is available for\n"
+      "the following currencies:\n"
       " - Norwegian krone (NOK),\n"
       " - Swedish krona (SEK),\n"
       " - Danish krone (DKK),\n"
       " - Iceland krona (ISK),\n"
       " - Euro (EUR).\n"
-      "To convert, enter the three-letter currency code (letter case is not important),\n"
-      "then enter the amount of money. Enter 'stop' to finish the converter.\n")
+      "Enter the three-letter currency code (letter case is not important),\n"
+      "and an amount of money. Enter 'stop' to finish the converter.\n")
 VAR = None
 while VAR != 1:
     currency_1 = currency_check()
@@ -70,12 +71,13 @@ while VAR != 1:
         print(amount, currency.get(currency_1)[3], "equals:")
     for key in currency:
         if key != currency_1:
-            final_amount = round(amount * currency.get(currency_1)[0] * currency.get(key)[1], 2)
+            final_amount = round(amount * currency.get(currency_1)[0] 
+                                 * currency.get(key)[1], 2)
             if final_amount == 1:
                 print("\t", final_amount, currency.get(key)[2])
             elif final_amount != 1:
                 print("\t", final_amount, currency.get(key)[3])
-    print("==============================\nOne more conversion? Remember, that ", end="")
+    print("================\nOne more conversion? Remember, that ", end="")
     print("the available currencies are:\n"
           "Norwegian krone (NOK), Swedish krona (SEK), Danish krone (DKK),\n"
           "Iceland krona (ISK), and Euro (EUR).\n"
