@@ -65,9 +65,9 @@ class Dna:
                 n_counter += 1
         gc_cont = round(counter / len(self.sequence), 2)
         if n_counter > 0:
-            return "Unable to calculate GC-content because of N-bases existence"
+            return "Unable to calculate GC-content: of N-bases existence"
         else:
-            return f"GC-content of '{self.init_sequence}' is {gc_cont}"
+            return f"GC-content of {self.init_sequence} is {gc_cont}"
 
     def reverse_complement(self):
         rev_seq = self.sequence[::-1]
@@ -87,7 +87,7 @@ class Dna:
                     else:
                         rev_com_seq.append(bases[base][1])
         rev_com_seq = "".join(rev_com_seq)
-        return f"Reverse complement of '{self.init_sequence}' is '{rev_com_seq}'"
+        return f"Reverse complement of {self.init_sequence} is {rev_com_seq}"
 
     def transcribe(self):
         tran_seq = []
